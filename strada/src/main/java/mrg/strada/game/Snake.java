@@ -20,12 +20,15 @@ public class Snake extends Item implements SnakeItemMovable {
 			Random rand = new Random();
 
 			currentPosition[0] = rand.nextInt(height);
-			currentPosition[0] = currentPosition[0] == 0 ? 1 : currentPosition[0];
+			currentPosition[0] = currentPosition[0] == 0 ? 1 : 
+				                 (currentPosition[0] == (height - 1) ? (height - 2) : currentPosition[0]);
 
 			currentPosition[1] = rand.nextInt(width);
 			currentPosition[1] = currentPosition[1] == 0 ? 1 : currentPosition[1];
-
+			
+			this.itemInitialized = true;
 			return currentPosition;
+			
 		} else {
 			return this.calculateNextMove();
 		}

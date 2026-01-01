@@ -23,7 +23,8 @@ public class Player extends Item implements SnakeItemMovable {
 
 			currentPosition[1] = rand.nextInt(width);
 			currentPosition[1] = currentPosition[1] == 0 ? 1 : currentPosition[1];
-
+			
+			this.itemInitialized = true;
 			return currentPosition;
 		} else {
 			Scanner scn = new Scanner(System.in);

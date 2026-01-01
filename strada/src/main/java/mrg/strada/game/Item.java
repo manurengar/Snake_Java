@@ -12,7 +12,8 @@ public abstract class Item implements SnakeGameItem {
 
 		StringBuilder itemReplacement = new StringBuilder(board[itemPosition[0]]);
 		itemReplacement.setCharAt((itemPosition[1] - 1) < 0 ? 0 : itemPosition[1] - 1, itemSymbol);
-
+		
+		board[itemPosition[0]] = itemReplacement.toString();
 		return board;
 	}
 
